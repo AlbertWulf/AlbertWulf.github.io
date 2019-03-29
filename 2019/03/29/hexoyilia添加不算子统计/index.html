@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: yilia主题使用 | Albert Wu</title>
+  <title>为Hexo + yilia 主题博客添加不算子统计文章阅读量与网站浏览量 | Albert Wu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Albert Wu">
-<meta property="og:url" content="http://yoursite.com/tags/yilia主题使用/index.html">
+  <meta name="description" content="yilia 主题下的网站流量计数系统通常的网站计数系统有百度统计以及谷歌分析等大厂提供的解决方案，但是对于个人搭建的博客而言最初其实倒没有必要去费一番周折。在此推荐由不算子提供的网站计数接口。眼看博客的评论接口已经凉的差不多了，不算子还算比较靠谱的。 在themes/yilia/_config.yml中添加属性本身yilia主题没有在_config.yml保留busuanzi的属性，所以在此添加(">
+<meta name="keywords" content="Hexo 博客搭建,yilia主题使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为Hexo + yilia 主题博客添加不算子统计文章阅读量与网站浏览量">
+<meta property="og:url" content="http://yoursite.com/2019/03/29/hexoyilia添加不算子统计/index.html">
 <meta property="og:site_name" content="Albert Wu">
+<meta property="og:description" content="yilia 主题下的网站流量计数系统通常的网站计数系统有百度统计以及谷歌分析等大厂提供的解决方案，但是对于个人搭建的博客而言最初其实倒没有必要去费一番周折。在此推荐由不算子提供的网站计数接口。眼看博客的评论接口已经凉的差不多了，不算子还算比较靠谱的。 在themes/yilia/_config.yml中添加属性本身yilia主题没有在_config.yml保留busuanzi的属性，所以在此添加(">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-29T01:56:47.033Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Albert Wu">
+<meta name="twitter:title" content="为Hexo + yilia 主题博客添加不算子统计文章阅读量与网站浏览量">
+<meta name="twitter:description" content="yilia 主题下的网站流量计数系统通常的网站计数系统有百度统计以及谷歌分析等大厂提供的解决方案，但是对于个人搭建的博客而言最初其实倒没有必要去费一番周折。在此推荐由不算子提供的网站计数接口。眼看博客的评论接口已经凉的差不多了，不算子还算比较靠谱的。 在themes/yilia/_config.yml中添加属性本身yilia主题没有在_config.yml保留busuanzi的属性，所以在此添加(">
   
     <link rel="alternative" href="/atom.xml" title="Albert Wu" type="application/atom+xml">
   
@@ -150,37 +155,84 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-hexoyilia添加不算子统计" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      为Hexo + yilia 主题博客添加不算子统计文章阅读量与网站浏览量
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/AlbertWulf.github.io/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+
+        
+        
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
 <a href="/AlbertWulf.github.io/2019/03/29/hexoyilia添加不算子统计/" class="archive-article-date">
   	<time datetime="2019-03-29T01:53:14.274Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-29</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/AlbertWulf.github.io/2019/03/29/hexoyilia添加不算子统计/">为Hexo + yilia 主题博客添加不算子统计文章阅读量与网站浏览量</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="yilia-主题下的网站流量计数系统"><a href="#yilia-主题下的网站流量计数系统" class="headerlink" title="yilia 主题下的网站流量计数系统"></a>yilia 主题下的网站流量计数系统</h1><p>通常的网站计数系统有百度统计以及谷歌分析等大厂提供的解决方案，但是对于个人搭建的博客而言最初其实倒没有必要去费一番周折。在此推荐由不算子提供的网站计数接口。眼看博客的评论接口已经凉的差不多了，不算子还算比较靠谱的。</p>
+<h2 id="在themes-yilia-config-yml中添加属性"><a href="#在themes-yilia-config-yml中添加属性" class="headerlink" title="在themes/yilia/_config.yml中添加属性"></a>在<code>themes/yilia/_config.yml</code>中添加属性</h2><p>本身<code>yilia</code>主题没有在<code>_config.yml</code>保留<code>busuanzi</code>的属性，所以在此添加(：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#开启不算子访问统计</span><br><span class="line">busuanzi:</span><br><span class="line">    enable: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>==注意<code>enable:</code>与<code>true</code>之间一定要保留空格，对于所有配置文件都如此==</p>
+<h2 id="添加不算子网站访问量统计脚本"><a href="#添加不算子网站访问量统计脚本" class="headerlink" title="添加不算子网站访问量统计脚本"></a>添加不算子网站访问量统计脚本</h2><p>在<code>themes/yilia/layout/_partial/footer.ejs</code>末尾<code>&lt;/footer&gt;</code>与其上面的<code>&lt;/div&gt;</code>之间放入代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (theme.busuanzi &amp;&amp; theme.busuanzi.enable)&#123; %&gt;</span><br><span class="line">        &lt;!-- 不蒜子统计 --&gt;</span><br><span class="line">        &lt;span id=<span class="string">"busuanzi_container_site_pv"</span>&gt;</span><br><span class="line">                本站总访问量&lt;span id=<span class="string">"busuanzi_value_site_pv"</span>&gt;&lt;/span&gt;次</span><br><span class="line">        &lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">        &lt;span class="post-meta-divider"&gt;|&lt;/</span>span&gt;</span><br><span class="line">        &lt;span id=<span class="string">"busuanzi_container_site_uv"</span> style=<span class="string">'display:none'</span>&gt;</span><br><span class="line">                本站访客数&lt;span id=<span class="string">"busuanzi_value_site_uv"</span>&gt;&lt;/span&gt;人</span><br><span class="line">        &lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">        &lt;script async src="/</span>busuanzi.ibruce.info/busuanzi/<span class="number">2.3</span>/busuanzi.pure.mini.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">  &lt;% &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+<p>==由于不算子早期的域名被强制过期，所以网上很多早期的教程的链接已经失效了，需要注意甄别==</p>
+<h2 id="在你需要的位置添加访问量"><a href="#在你需要的位置添加访问量" class="headerlink" title="在你需要的位置添加访问量"></a>在你需要的位置添加访问量</h2><p>根据不同的需求，你看你需要在不同的位置显示你的文章阅读量，此处以在右上角的日期区域添加文章阅读量为例：<br>在<code>themes/yilia/layout/_partial/post/date.ejs</code> 原有代码的开头(不需要把新代码放入原代码块中，而是和原代码独立的两块）加入：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (theme.busuanzi &amp;&amp; theme.busuanzi.enable &amp;&amp; !index)&#123; %&gt;</span><br><span class="line">        &lt;!-- 不蒜子统计 --&gt;</span><br><span class="line">        &lt;span id=<span class="string">"busuanzi_container_page_pv"</span> style=<span class="string">'display:none'</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"&lt;%= class_name %&gt;"</span>&gt;</span><br><span class="line">              &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">"icon-smile icon"</span>&gt;&lt;/i&gt; 阅读数：&lt;span id=<span class="string">"busuanzi_value_page_pv"</span>&gt;&lt;/span&gt;次</span><br><span class="line">        &lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">&lt;% &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这种方法对于同一个人反复访问网站是持续累加的，我想大家也不会拒绝这种lowlow的操作（狗头）</p>
+<h2 id="生成以及显示效果"><a href="#生成以及显示效果" class="headerlink" title="生成以及显示效果"></a>生成以及显示效果</h2><p>在hexo目录上邮件选择<code>Git bash</code>，输入<code>hexo g</code>等待生成完成，再输入<code>hexo d</code>提交代码（也没必要每次都<code>hexo s</code>本地调试一番了），接着刷新你的博客界面，就可以查看结果了。功能显示可能会有一段时间之后才出现，我的当时网站访问量正常工作了，但是文章阅读量十几分钟之后才正常，所以需要一些等待。<br>下面给出了不算子本人的官网，大家可以移步去浏览一下，还是一个很有情怀的程序员。</p>
+<p>链接: <a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="noopener">link</a>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// An highlighted block</span></span><br><span class="line"><span class="keyword">var</span> foo = <span class="string">'bar'</span>;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/ali_pay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechat_pay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -196,62 +248,140 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/29/hexoyilia添加不算子统计/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/AlbertWulf.github.io/2019/03/28/blog_one/" class="archive-article-date">
-  	<time datetime="2019-03-28T08:16:13.616Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/AlbertWulf.github.io/2019/03/28/hexo_blogs/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/AlbertWulf.github.io/2019/03/28/blog_one/">first blog</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo 博客搭建</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yilia主题使用</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#yilia-主题下的网站流量计数系统"><span class="toc-number">1.</span> <span class="toc-text">yilia 主题下的网站流量计数系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#在themes-yilia-config-yml中添加属性"><span class="toc-number">1.1.</span> <span class="toc-text">在themes/yilia/_config.yml中添加属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加不算子网站访问量统计脚本"><span class="toc-number">1.2.</span> <span class="toc-text">添加不算子网站访问量统计脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在你需要的位置添加访问量"><span class="toc-number">1.3.</span> <span class="toc-text">在你需要的位置添加访问量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成以及显示效果"><span class="toc-number">1.4.</span> <span class="toc-text">生成以及显示效果</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
+  
+    <!-- ������City�氲װ���� -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQ0My8xOTk4Mw==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> Ϊ����ʹ�����������۹����뼤��JavaScript</noscript>
+</div>
+<!-- City�氲װ��������� -->
+    
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -285,9 +415,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
