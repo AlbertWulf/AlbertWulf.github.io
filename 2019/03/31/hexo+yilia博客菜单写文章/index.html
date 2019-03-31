@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Albert Wu">
 <meta property="og:description" content="基于hexo+yilia主题搭建的博客在最初只有“主页”以及“随笔”两个标签，如果我们想去添加更多的栏目并且把对应的文章放在下面，作者并没有明示方法。通常和我一样的小白在搜了一些教程看到只要执行new page &amp;quot;你要的分类&amp;quot;再在_config.yml文章中的menu菜单下添加对应分类名就可以了。但是大家似乎都没有写怎么写文章到这个分类下。起初我就直接把文章放到了新建的那个目录">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-31T06:21:31.403Z">
+<meta property="og:updated_time" content="2019-03-31T06:25:37.949Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+yilia主题自定义菜单写文章">
 <meta name="twitter:description" content="基于hexo+yilia主题搭建的博客在最初只有“主页”以及“随笔”两个标签，如果我们想去添加更多的栏目并且把对应的文章放在下面，作者并没有明示方法。通常和我一样的小白在搜了一些教程看到只要执行new page &amp;quot;你要的分类&amp;quot;再在_config.yml文章中的menu菜单下添加对应分类名就可以了。但是大家似乎都没有写怎么写文章到这个分类下。起初我就直接把文章放到了新建的那个目录">
@@ -209,7 +209,7 @@
 <h1 id="创建新页面"><a href="#创建新页面" class="headerlink" title="创建新页面"></a>创建新页面</h1><p> 在<code>hexo</code>文件夹下执行<code>Git Bash</code>，以创建<code>Android</code>分类为例，执行<code>hexo new page &quot;Android&quot;</code></p>
 <h1 id="修改注册文件"><a href="#修改注册文件" class="headerlink" title="修改注册文件"></a>修改注册文件</h1><p> 在<code>themes</code>目录下的<code>_config.yml</code>问价下<code>menu</code>下添加：<code>Android:\tags\Android\</code></p>
 <h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><p>在新建文章的头部title栏目中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">    title: xxx</span><br><span class="line">    tags: </span><br><span class="line">         - Android</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">    title: xxx</span><br><span class="line">    tags: </span><br><span class="line">         - Android</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p> 通过上面可以看出，新的分类文章依然是在post目录下，而不是在新分类的文件夹下，只是通过<code>tags</code>把文章归类到这个分类下。</p>
 
       
