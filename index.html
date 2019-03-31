@@ -198,7 +198,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在写一个java程序时遇到一个需求，就是当用户从键盘输入一个函数表达式，比如:|<code>3*x+2</code>时，可以画出<code>0~10</code>之间这个函数的值或者图像。如果是在<code>Matlab</code>中，这是非常容易的，只需要声明一个符号变量，<code>syms x</code>然后使用<code>eval(3*x+2)</code>函数就可以计算出给定<code>x</code>时表达式的值，但是发现在java中却没有这样的函数。网上给出的计算表达式值的方法也都是输入一个数学表达式比如<code>2+4*10</code>计算得到结果，但是没有针对这种输入带未知数函数的操作。经过一番找寻之后，根据零星的信息拼凑出了一个方法，感觉还不错。</p>
-<h1 id="话不多说，先上代码"><a href="#话不多说，先上代码" class="headerlink" title="话不多说，先上代码"></a>话不多说，先上代码</h1><p>##<br><code>`</code>java<br>import java.io.*;<br>import java.util.Scanner;</p>
+<h1 id="话不多说，先上代码"><a href="#话不多说，先上代码" class="headerlink" title="话不多说，先上代码"></a>话不多说，先上代码</h1><p><code>`</code>java<br>import java.io.*;<br>import java.util.Scanner;</p>
 <p>import javax.script.ScriptEngine;<br>import javax.script.ScriptEngineManager;<br>public class Test<br>{<br>        public static void main(String[] args) throws Exception  </p>
 <pre><code>{ 
         Scanner input=new Scanner(System.in);
@@ -217,11 +217,9 @@
        System.out.println(result);  
 }  
 </code></pre><p>}<br><code>`</code>java</p>
-<p>首先如果有复制代码的需求的话记得复制完之后在最前面加上你自己的包名。这个主要是利用java后来支持的js的库利用js的功能来实现的，看看结果吧！<br><code>java
-请输入x与y的表达式：3*x+y
-40.0</code>java<br>还可以支持其他函数比如三角函数，但是需要遵循Java的语法：比如<code>sin(x)</code>写成<code>Math.sin(x)</code>:<br><code>java
-请输入x与y的表达式：Math.sin(x)+y
-9.45597888911063</code>java</p>
+<p>首先如果有复制代码的需求的话记得复制完之后在最前面加上你自己的包名。这个主要是利用java后来支持的js的库利用js的功能来实现的，看看结果吧！<br><code>请输入x与y的表达式：3*x+y
+40.0</code><br>还可以支持其他函数比如三角函数，但是需要遵循Java的语法：比如<code>sin(x)</code>写成<code>Math.sin(x)</code>:<br><code>请输入x与y的表达式：Math.sin(x)+y
+9.45597888911063</code></p>
 <p> 总结<br>可以看到这个库还是非常方便的，用在这里也非常巧妙，欢迎大家有更多更好的想法在下方留言~</p>
 
       
@@ -237,6 +235,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
@@ -950,6 +952,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
