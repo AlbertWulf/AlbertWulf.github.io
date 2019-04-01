@@ -176,6 +176,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-一个简单微博套壳App" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/AlbertWulf.github.io/2019/04/01/一个简单微博套壳App/">一个简单的hexo微博APP</a>
+    </h1>
+  
+
+        
+        
+<a href="/AlbertWulf.github.io/2019/04/01/一个简单微博套壳App/" class="archive-article-date">
+  	<time datetime="2019-04-01T06:37:55.730Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>基于hexo搭建的博客我选择的是yilia主题，这个主题对于手机端也提供了很好的支持（其实大部分主题都提供了支持），所以我就想着能否用<code>Android</code>编程中的<code>WebView</code>来进行一个简单的微博<code>APP</code>的开发，写完了发现还是非常简单的。</p>
+<h1 id="创建WebView"><a href="#创建WebView" class="headerlink" title="创建WebView"></a>创建<code>WebView</code></h1><p>首先需要在<code>MainActivity.java</code>中创建一个<code>WebView</code>用以打开<code>html</code>网页。代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> WebView webView;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">    setContentView(R.layout.activity_main);</span><br><span class="line">    webView = (WebView) findViewById(R.id.web_view);</span><br><span class="line">    webView.getSettings().setJavaScriptEnabled(<span class="keyword">true</span>);</span><br><span class="line">    webView.setWebViewClient(<span class="keyword">new</span> WebViewClient());</span><br><span class="line">    webView.loadUrl(<span class="string">"https://albertwulf.github.io"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中<code>webView</code>变量的声明还是尽量放在<code>onCreat</code>函数外边，否则无法被其他函数应用。此时一个简单的套壳微博App就已经好了。</p>
+<h1 id="添加手机返回键返回功能"><a href="#添加手机返回键返回功能" class="headerlink" title="添加手机返回键返回功能"></a>添加手机返回键返回功能</h1><p>简单的套壳APP一旦返回，就直接退出APP了，体验非常不好，在这里，我们可以通过监听手机返回键，来实现按下返回键返回上一个页面的功能，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onKeyDown</span><span class="params">(<span class="keyword">int</span> keyCode, KeyEvent event)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (keyCode == KeyEvent.KEYCODE_BACK &amp;&amp; webView.canGoBack()) &#123;</span><br><span class="line"></span><br><span class="line">        webView.goBack();<span class="comment">//返回上个页面</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">super</span>.onKeyDown(keyCode, event);<span class="comment">//退出H5界面</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>至此，一个功能比较完善的微博app就已经完成的，但是这个主题对于一些操作还是有待适配，比如标签页的打开还是有问题。但是，由于是套壳打开html网页，所以加载速度也一言难尽。</p>
+<p>APP全部源码在此：<br><a href="https://github.com/AlbertWulf/BolgApp" target="_blank" rel="noopener">微博APP全部源码</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">hexo 博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/AlbertWulf.github.io/2019/04/01/一个简单微博套壳App/">SHOW ALL >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-玉渊潭的樱花" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1040,6 +1126,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">yilia主题使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">hexo 博客</a>
               </li>
              
               <li class="article-tag-list-item">
