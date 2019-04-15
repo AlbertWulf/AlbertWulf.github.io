@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Think | Albert Wu</title>
+  <title>Python的pandas处理excel | Albert Wu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Albert Wu">
-<meta property="og:url" content="http://yoursite.com/tags/Think/index.html">
+  <meta name="description" content="在Python上有很多第三方库可以进行excel文件的处理，包括pandas，xlrd等，但是像xlrd等专门处理excel的库似乎维护的不是很好，要么太老了无法处理新的xlsx文件格式，要不就像xlrd一样只支持xlsx格式。pandas作为一个强大的数据处理库，也是能够处理excel文档的，下面就以代码为例来说明用pandas处理excel 首先需要安装pandas库个人觉得Python还是推">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python的pandas处理excel">
+<meta property="og:url" content="http://yoursite.com/2019/04/14/Python的pandas处理excel/index.html">
 <meta property="og:site_name" content="Albert Wu">
+<meta property="og:description" content="在Python上有很多第三方库可以进行excel文件的处理，包括pandas，xlrd等，但是像xlrd等专门处理excel的库似乎维护的不是很好，要么太老了无法处理新的xlsx文件格式，要不就像xlrd一样只支持xlsx格式。pandas作为一个强大的数据处理库，也是能够处理excel文档的，下面就以代码为例来说明用pandas处理excel 首先需要安装pandas库个人觉得Python还是推">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T01:40:07.510Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Albert Wu">
+<meta name="twitter:title" content="Python的pandas处理excel">
+<meta name="twitter:description" content="在Python上有很多第三方库可以进行excel文件的处理，包括pandas，xlrd等，但是像xlrd等专门处理excel的库似乎维护的不是很好，要么太老了无法处理新的xlsx文件格式，要不就像xlrd一样只支持xlsx格式。pandas作为一个强大的数据处理库，也是能够处理excel文档的，下面就以代码为例来说明用pandas处理excel 首先需要安装pandas库个人觉得Python还是推">
   
     <link rel="alternative" href="/atom.xml" title="Albert Wu" type="application/atom+xml">
   
@@ -174,100 +179,230 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Python的pandas处理excel" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/AlbertWulf.github.io/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/AlbertWulf.github.io/2019/03/31/玉渊潭的樱花/" class="archive-article-date">
-  	<time datetime="2019-03-31T08:01:15.986Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/AlbertWulf.github.io/2019/03/31/玉渊潭的樱花/">玉渊潭的樱花</a>
+    <h1 class="article-title" itemprop="name">
+      Python的pandas处理excel
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        
+	<!-- 不蒜子统计 -->
+	<span id="busuanzi_container_page_pv" style="display:none" class="archive-article-date">
+		  <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+<a href="/AlbertWulf.github.io/2019/04/14/Python的pandas处理excel/" class="archive-article-date">
+  	<time datetime="2019-04-14T04:40:26.542Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在Python上有很多第三方库可以进行excel文件的处理，包括pandas，xlrd等，但是像xlrd等专门处理excel的库似乎维护的不是很好，要么太老了无法处理新的xlsx文件格式，要不就像xlrd一样只支持xlsx格式。pandas作为一个强大的数据处理库，也是能够处理excel文档的，下面就以代码为例来说明用pandas处理excel</p>
+<h1 id="首先需要安装pandas库"><a href="#首先需要安装pandas库" class="headerlink" title="首先需要安装pandas库"></a>首先需要安装pandas库</h1><p>个人觉得Python还是推荐使用anaconda，在anaconda prompt下输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pandas</span><br></pre></td></tr></table></figure>
+<p>然后等待安装完成即可，接下来先准备一份excel文件，最好和.py文件同目录，否则需要使用绝对路径，比较麻烦。<br>接着导入相关的库：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.special <span class="keyword">import</span> comb, perm</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib.mlab <span class="keyword">as</span> mlab</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br></pre></td></tr></table></figure>
+<p>导入文件：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">file = <span class="string">"实验一.xlsx"</span></span><br><span class="line">f2 = <span class="string">"parttwo.xlsx"</span><span class="comment">#第二部分计数率</span></span><br></pre></td></tr></table></figure>
+<p>接着使用pandas读取文件：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ptx = pd.read_excel(file)</span><br><span class="line">pt = pd.read_excel(f2)</span><br><span class="line">p_value = ptx.values</span><br><span class="line">p2_value = pt.values;</span><br></pre></td></tr></table></figure>
+<p>可以看到首先是使用<code>pd.read_excel</code>方法读取文件，接着要使用<code>file.values</code>方式获得文件的内容。</p>
+<h1 id="接着进行取值"><a href="#接着进行取值" class="headerlink" title="接着进行取值"></a>接着进行取值</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">arr_count = np.array([]);</span><br><span class="line">arr_vol = np.array([]);</span><br><span class="line">arr_bd = np.array([])<span class="comment">#存放本底数据</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">41</span>):</span><br><span class="line">arr_count = np.append(arr_count,p_value[i][<span class="number">1</span>]/<span class="number">20</span>)</span><br><span class="line">arr_vol = np.append(arr_vol,<span class="number">150</span>*p_value[i][<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<p>推荐使用<code>np.array([])</code>数组，因为比较方便进行整体的操作，主义对于行列数组的定义是从0开始的，如果经常使用matlab的话记得要注意。</p>
+<h2 id="最后就可以画图了"><a href="#最后就可以画图了" class="headerlink" title="最后就可以画图了"></a>最后就可以画图了</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">zhfont = matplotlib.font_manager.FontProperties(fname=<span class="string">'C:\Windows\Fonts\simkai.ttf'</span>) <span class="comment"># 设置字体格式 </span></span><br><span class="line">plt.plot(arr_vol,arr_count) </span><br><span class="line">plt.title(<span class="string">"坪特性曲线"</span>,fontproperties=zhfont)</span><br><span class="line">plt.grid(<span class="literal">True</span>)   </span><br><span class="line">plt.savefig(<span class="string">"坪特性曲线"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>可以看到pandas库还是很方便的</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/ali_pay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechat_pay.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Think</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/14/Python的pandas处理excel/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/AlbertWulf.github.io/2019/03/31/对于写博客看法/" class="archive-article-date">
-  	<time datetime="2019-03-31T04:36:18.301Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-31</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/AlbertWulf.github.io/2019/04/01/一个简单微博套壳App/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一个简单的hexo微博APP</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/AlbertWulf.github.io/2019/03/31/对于写博客看法/">个人对于写博客的一些看法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Think</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#首先需要安装pandas库"><span class="toc-number">1.</span> <span class="toc-text">首先需要安装pandas库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#接着进行取值"><span class="toc-number">2.</span> <span class="toc-text">接着进行取值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#最后就可以画图了"><span class="toc-number">2.1.</span> <span class="toc-text">最后就可以画图了</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
+  
+    <!-- ������City�氲װ���� -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzQ0My8xOTk4Mw==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> Ϊ����ʹ�����������۹����뼤��JavaScript</noscript>
+</div>
+<!-- City�氲װ��������� -->
+    
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -301,9 +436,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

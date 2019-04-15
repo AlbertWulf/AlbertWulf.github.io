@@ -176,6 +176,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Python的pandas处理excel" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/AlbertWulf.github.io/2019/04/14/Python的pandas处理excel/">Python的pandas处理excel</a>
+    </h1>
+  
+
+        
+        
+<a href="/AlbertWulf.github.io/2019/04/14/Python的pandas处理excel/" class="archive-article-date">
+  	<time datetime="2019-04-14T04:40:26.542Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在Python上有很多第三方库可以进行excel文件的处理，包括pandas，xlrd等，但是像xlrd等专门处理excel的库似乎维护的不是很好，要么太老了无法处理新的xlsx文件格式，要不就像xlrd一样只支持xlsx格式。pandas作为一个强大的数据处理库，也是能够处理excel文档的，下面就以代码为例来说明用pandas处理excel</p>
+<h1 id="首先需要安装pandas库"><a href="#首先需要安装pandas库" class="headerlink" title="首先需要安装pandas库"></a>首先需要安装pandas库</h1><p>个人觉得Python还是推荐使用anaconda，在anaconda prompt下输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pandas</span><br></pre></td></tr></table></figure>
+<p>然后等待安装完成即可，接下来先准备一份excel文件，最好和.py文件同目录，否则需要使用绝对路径，比较麻烦。<br>接着导入相关的库：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.special <span class="keyword">import</span> comb, perm</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib.mlab <span class="keyword">as</span> mlab</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br></pre></td></tr></table></figure>
+<p>导入文件：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">file = <span class="string">"实验一.xlsx"</span></span><br><span class="line">f2 = <span class="string">"parttwo.xlsx"</span><span class="comment">#第二部分计数率</span></span><br></pre></td></tr></table></figure>
+<p>接着使用pandas读取文件：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ptx = pd.read_excel(file)</span><br><span class="line">pt = pd.read_excel(f2)</span><br><span class="line">p_value = ptx.values</span><br><span class="line">p2_value = pt.values;</span><br></pre></td></tr></table></figure>
+<p>可以看到首先是使用<code>pd.read_excel</code>方法读取文件，接着要使用<code>file.values</code>方式获得文件的内容。</p>
+<h1 id="接着进行取值"><a href="#接着进行取值" class="headerlink" title="接着进行取值"></a>接着进行取值</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">arr_count = np.array([]);</span><br><span class="line">arr_vol = np.array([]);</span><br><span class="line">arr_bd = np.array([])<span class="comment">#存放本底数据</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">41</span>):</span><br><span class="line">arr_count = np.append(arr_count,p_value[i][<span class="number">1</span>]/<span class="number">20</span>)</span><br><span class="line">arr_vol = np.append(arr_vol,<span class="number">150</span>*p_value[i][<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<p>推荐使用<code>np.array([])</code>数组，因为比较方便进行整体的操作，主义对于行列数组的定义是从0开始的，如果经常使用matlab的话记得要注意。</p>
+<h2 id="最后就可以画图了"><a href="#最后就可以画图了" class="headerlink" title="最后就可以画图了"></a>最后就可以画图了</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">zhfont = matplotlib.font_manager.FontProperties(fname=<span class="string">'C:\Windows\Fonts\simkai.ttf'</span>) <span class="comment"># 设置字体格式 </span></span><br><span class="line">plt.plot(arr_vol,arr_count) </span><br><span class="line">plt.title(<span class="string">"坪特性曲线"</span>,fontproperties=zhfont)</span><br><span class="line">plt.grid(<span class="literal">True</span>)   </span><br><span class="line">plt.savefig(<span class="string">"坪特性曲线"</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>可以看到pandas库还是很方便的</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/AlbertWulf.github.io/2019/04/14/Python的pandas处理excel/">SHOW ALL >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-一个简单微博套壳App" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -480,11 +568,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yilia主题使用</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo 博客搭建</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo 博客搭建</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yilia主题使用</a>
         		</li>
       		
 		</ul>
@@ -647,11 +735,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo 博客搭建</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yilia主题使用</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yilia主题使用</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo 博客搭建</a>
         		</li>
       		
 		</ul>
@@ -872,11 +960,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo 博客搭建</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yilia主题使用</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yilia主题使用</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo 博客搭建</a>
         		</li>
       		
 		</ul>
@@ -1121,15 +1209,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo 博客搭建</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo 博客搭建</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">yilia主题使用</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo 博客搭建</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1141,7 +1225,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo 博客搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Think</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
             
             <div class="clearfix"></div>
