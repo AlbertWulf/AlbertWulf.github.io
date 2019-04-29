@@ -176,6 +176,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Latex小技巧：将Excel表格转换为Latex格式表格" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/AlbertWulf.github.io/2019/04/29/Latex小技巧：将Excel表格转换为Latex格式表格/">Latex小技巧：将Excel表格转换为Latex格式表格</a>
+    </h1>
+  
+
+        
+        
+<a href="/AlbertWulf.github.io/2019/04/29/Latex小技巧：将Excel表格转换为Latex格式表格/" class="archive-article-date">
+  	<time datetime="2019-04-29T13:57:33.844Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Latex作为一种强大的论文排版工具，在进行论文的排版时具有高度的灵活性与自定义性。但是在输入表格时，往往十分麻烦，而且在面对大量数据时基本更是无解。尤其是大部分数据都是以Excel的形式给出，很难直接利用，所以今天就推荐一款Excel小插件来实现从Excel表格到Latex形式表格的直接装换，非常方便快捷。</p>
+<h1 id="Excel2Latex插件下载使用"><a href="#Excel2Latex插件下载使用" class="headerlink" title="Excel2Latex插件下载使用"></a>Excel2Latex插件下载使用</h1><p>这款插件的名称叫做<code>Excel2Latex</code>,下载的网址在这里：<a href="https://ctan.org/tex-archive/support/excel2latex/" target="_blank" rel="noopener">Excel2Latex</a>首先进入网站，直接下拉到最下面：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190429215101612.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xGMjEwMTE1MDE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">选择<code>Excel2Latex.xla</code>文件下载，然后双击就会打开Excel，接着关闭Excel重启，就可以看到有一个插件出现了：<br><img src="https://img-blog.csdnimg.cn/2019042921534881.PNG" alt="在这里插入图片描述">选中你需要转换的数据，然后点击插件就会出现菜单：<br><img src="https://img-blog.csdnimg.cn/20190429215633997.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0xGMjEwMTE1MDE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>选择<code>Copy to Clipboard</code>就可以粘贴到Latex中使用了</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>可以看到使用这个转换还是非常方便的</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Latex</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Excel</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/AlbertWulf.github.io/2019/04/29/Latex小技巧：将Excel表格转换为Latex格式表格/">SHOW ALL >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-解决Anaconda下更新下载python包慢问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -531,25 +613,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在写一个java程序时遇到一个需求，就是当用户从键盘输入一个函数表达式，比如:|<code>3*x+2</code>时，可以画出<code>0~10</code>之间这个函数的值或者图像。如果是在<code>Matlab</code>中，这是非常容易的，只需要声明一个符号变量，<code>syms x</code>然后使用<code>eval(3*x+2)</code>函数就可以计算出给定<code>x</code>时表达式的值，但是发现在java中却没有这样的函数。网上给出的计算表达式值的方法也都是输入一个数学表达式比如<code>2+4*10</code>计算得到结果，但是没有针对这种输入带未知数函数的操作。经过一番找寻之后，根据零星的信息拼凑出了一个方法，感觉还不错。</p>
-<h1 id="话不多说，先上代码"><a href="#话不多说，先上代码" class="headerlink" title="话不多说，先上代码"></a>话不多说，先上代码</h1><p><code>`</code>java<br>import java.io.*;<br>import java.util.Scanner;</p>
-<p>import javax.script.ScriptEngine;<br>import javax.script.ScriptEngineManager;<br>public class Test<br>{<br>        public static void main(String[] args) throws Exception  </p>
-<pre><code>{ 
-        Scanner input=new Scanner(System.in);
-
-        //String expr = &quot;x+y*10&quot;; 
-        String expr=null;
-        System.out.print(&quot;x与y的表达式&quot;);
-        expr = input.next();
-        System.out.println(expr);
-
-        ScriptEngineManager manager = new ScriptEngineManager();  
-        ScriptEngine engine = manager.getEngineByName(&quot;js&quot;);  
-        engine.put(&quot;x&quot;, 10);  
-        engine.put(&quot;y&quot;, 10);  
-        Object result = engine.eval(expr);  
-       System.out.println(result);  
-}  
-</code></pre><p>}<br><code>`</code>java</p>
+<h1 id="话不多说，先上代码"><a href="#话不多说，先上代码" class="headerlink" title="话不多说，先上代码"></a>话不多说，先上代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.script.ScriptEngine;  </span><br><span class="line"><span class="keyword">import</span> javax.script.ScriptEngineManager;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception  </span></span><br><span class="line"><span class="function">        </span></span><br><span class="line"><span class="function">        </span>&#123; </span><br><span class="line">        	    Scanner input=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">                <span class="comment">//String expr = "x+y*10"; </span></span><br><span class="line">        	    String expr=<span class="keyword">null</span>;</span><br><span class="line">        	    System.out.print(<span class="string">"x与y的表达式"</span>);</span><br><span class="line">        	    expr = input.next();</span><br><span class="line">        	    System.out.println(expr);</span><br><span class="line">        	    </span><br><span class="line">                ScriptEngineManager manager = <span class="keyword">new</span> ScriptEngineManager();  </span><br><span class="line">                ScriptEngine engine = manager.getEngineByName(<span class="string">"js"</span>);  </span><br><span class="line">                engine.put(<span class="string">"x"</span>, <span class="number">10</span>);  </span><br><span class="line">                engine.put(<span class="string">"y"</span>, <span class="number">10</span>);  </span><br><span class="line">                Object result = engine.eval(expr);  </span><br><span class="line">               System.out.println(result);  </span><br><span class="line">        &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>首先如果有复制代码的需求的话记得复制完之后在最前面加上你自己的包名。这个主要是利用java后来支持的js的库利用js的功能来实现的，看看结果吧！<br><code>请输入x与y的表达式：3*x+y
 40.0</code><br>还可以支持其他函数比如三角函数，但是需要遵循Java的语法：比如<code>sin(x)</code>写成<code>Math.sin(x)</code>:<br><code>请输入x与y的表达式：Math.sin(x)+y
 9.45597888911063</code></p>
@@ -994,99 +1058,6 @@
 
 
   
-    <article id="post-blog_one" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/AlbertWulf.github.io/2019/03/28/blog_one/">为Hexo + yilia 主题博客添加不算子统计文章阅读量与网站浏览量</a>
-    </h1>
-  
-
-        
-        
-<a href="/AlbertWulf.github.io/2019/03/28/blog_one/" class="archive-article-date">
-  	<time datetime="2019-03-28T08:16:13.616Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="yilia-主题下的网站流量计数系统"><a href="#yilia-主题下的网站流量计数系统" class="headerlink" title="yilia 主题下的网站流量计数系统"></a>yilia 主题下的网站流量计数系统</h1><p>通常的网站计数系统有百度统计以及谷歌分析等大厂提供的解决方案，但是对于个人搭建的博客而言最初其实倒没有必要去费一番周折。在此推荐由不算子提供的网站计数接口。眼看博客的评论接口已经凉的差不多了，不算子还算比较靠谱的。</p>
-<h2 id="在"><a href="#在" class="headerlink" title="在"></a>在</h2><p>我们对Markdown编辑器进行了一些功能拓展与语法支持，除了标准的Markdown编辑器功能，我们增加了如下几点新功能，帮助你用它写博客：</p>
-<ol>
-<li><strong>全新的界面设计</strong> ，将会带来全新的写作体验；</li>
-<li>在创作中心设置你喜爱的代码高亮样式，Markdown <strong>将代码片显示选择的高亮样式</strong> 进行展示；</li>
-<li>增加了 <strong>图片拖拽</strong> 功能，你可以将本地的图片直接拖拽到编辑区域直接展示；</li>
-<li>全新的 <strong>KaTeX数学公式</strong> 语法；</li>
-<li>增加了支持<strong>甘特图的mermaid语法<a href="[mermaid语法说明](https://mermaidjs.github.io/)">^1</a></strong> 功能；</li>
-<li>增加了 <strong>多屏幕编辑</strong> Markdown文章功能；</li>
-<li>增加了 <strong>焦点写作模式、预览模式、简洁写作模式、左右区域同步滚轮设置</strong> 等功能，功能按钮位于编辑区域与预览区域中间；</li>
-<li>增加了 <strong>检查列表</strong> 功能。</li>
-</ol>
-<h2 id="功能快捷键"><a href="#功能快捷键" class="headerlink" title="功能快捷键"></a>功能快捷键</h2><p>撤销：<kbd>Ctrl/Command</kbd> + <kbd>Z</kbd><br>重做：<kbd>Ctrl/Command</kbd> + <kbd>Y</kbd><br>加粗：<kbd>Ctrl/Command</kbd> + <kbd>B</kbd><br>斜体：<kbd>Ctrl/Command</kbd> + <kbd>I</kbd><br>标题：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd><br>无序列表：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd><br>有序列表：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd><br>检查列表：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd><br>插入代码：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd><br>插入链接：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd><br>插入图片：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd></p>
-        
-          <a class="article-more-a" href="/AlbertWulf.github.io/2019/03/28/blog_one/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo 博客搭建</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yilia主题使用</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/AlbertWulf.github.io/2019/03/28/blog_one/">SHOW ALL >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/AlbertWulf.github.io/page/2/">2</a><a class="extend next" rel="next" href="/AlbertWulf.github.io/page/2/">Next &raquo;</a>
@@ -1216,15 +1187,23 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">

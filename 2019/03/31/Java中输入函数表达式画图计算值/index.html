@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Albert Wu">
 <meta property="og:description" content="在写一个java程序时遇到一个需求，就是当用户从键盘输入一个函数表达式，比如:|3*x+2时，可以画出0~10之间这个函数的值或者图像。如果是在Matlab中，这是非常容易的，只需要声明一个符号变量，syms x然后使用eval(3*x+2)函数就可以计算出给定x时表达式的值，但是发现在java中却没有这样的函数。网上给出的计算表达式值的方法也都是输入一个数学表达式比如2+4*10计算得到结果，但">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-31T07:04:39.171Z">
+<meta property="og:updated_time" content="2019-04-29T15:22:41.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中输入函数表达式画图计算值">
 <meta name="twitter:description" content="在写一个java程序时遇到一个需求，就是当用户从键盘输入一个函数表达式，比如:|3*x+2时，可以画出0~10之间这个函数的值或者图像。如果是在Matlab中，这是非常容易的，只需要声明一个符号变量，syms x然后使用eval(3*x+2)函数就可以计算出给定x时表达式的值，但是发现在java中却没有这样的函数。网上给出的计算表达式值的方法也都是输入一个数学表达式比如2+4*10计算得到结果，但">
@@ -206,25 +206,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在写一个java程序时遇到一个需求，就是当用户从键盘输入一个函数表达式，比如:|<code>3*x+2</code>时，可以画出<code>0~10</code>之间这个函数的值或者图像。如果是在<code>Matlab</code>中，这是非常容易的，只需要声明一个符号变量，<code>syms x</code>然后使用<code>eval(3*x+2)</code>函数就可以计算出给定<code>x</code>时表达式的值，但是发现在java中却没有这样的函数。网上给出的计算表达式值的方法也都是输入一个数学表达式比如<code>2+4*10</code>计算得到结果，但是没有针对这种输入带未知数函数的操作。经过一番找寻之后，根据零星的信息拼凑出了一个方法，感觉还不错。</p>
-<h1 id="话不多说，先上代码"><a href="#话不多说，先上代码" class="headerlink" title="话不多说，先上代码"></a>话不多说，先上代码</h1><p><code>`</code>java<br>import java.io.*;<br>import java.util.Scanner;</p>
-<p>import javax.script.ScriptEngine;<br>import javax.script.ScriptEngineManager;<br>public class Test<br>{<br>        public static void main(String[] args) throws Exception  </p>
-<pre><code>{ 
-        Scanner input=new Scanner(System.in);
-
-        //String expr = &quot;x+y*10&quot;; 
-        String expr=null;
-        System.out.print(&quot;x与y的表达式&quot;);
-        expr = input.next();
-        System.out.println(expr);
-
-        ScriptEngineManager manager = new ScriptEngineManager();  
-        ScriptEngine engine = manager.getEngineByName(&quot;js&quot;);  
-        engine.put(&quot;x&quot;, 10);  
-        engine.put(&quot;y&quot;, 10);  
-        Object result = engine.eval(expr);  
-       System.out.println(result);  
-}  
-</code></pre><p>}<br><code>`</code>java</p>
+<h1 id="话不多说，先上代码"><a href="#话不多说，先上代码" class="headerlink" title="话不多说，先上代码"></a>话不多说，先上代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.script.ScriptEngine;  </span><br><span class="line"><span class="keyword">import</span> javax.script.ScriptEngineManager;  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span>  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception  </span></span><br><span class="line"><span class="function">        </span></span><br><span class="line"><span class="function">        </span>&#123; </span><br><span class="line">        	    Scanner input=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">                <span class="comment">//String expr = "x+y*10"; </span></span><br><span class="line">        	    String expr=<span class="keyword">null</span>;</span><br><span class="line">        	    System.out.print(<span class="string">"x与y的表达式"</span>);</span><br><span class="line">        	    expr = input.next();</span><br><span class="line">        	    System.out.println(expr);</span><br><span class="line">        	    </span><br><span class="line">                ScriptEngineManager manager = <span class="keyword">new</span> ScriptEngineManager();  </span><br><span class="line">                ScriptEngine engine = manager.getEngineByName(<span class="string">"js"</span>);  </span><br><span class="line">                engine.put(<span class="string">"x"</span>, <span class="number">10</span>);  </span><br><span class="line">                engine.put(<span class="string">"y"</span>, <span class="number">10</span>);  </span><br><span class="line">                Object result = engine.eval(expr);  </span><br><span class="line">               System.out.println(result);  </span><br><span class="line">        &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>首先如果有复制代码的需求的话记得复制完之后在最前面加上你自己的包名。这个主要是利用java后来支持的js的库利用js的功能来实现的，看看结果吧！<br><code>请输入x与y的表达式：3*x+y
 40.0</code><br>还可以支持其他函数比如三角函数，但是需要遵循Java的语法：比如<code>sin(x)</code>写成<code>Math.sin(x)</code>:<br><code>请输入x与y的表达式：Math.sin(x)+y
 9.45597888911063</code></p>
@@ -550,15 +532,23 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Latex</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Excel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
